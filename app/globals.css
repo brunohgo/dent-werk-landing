@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0F172A;
+  --emerald: #0D9488;
+  --silver: #E2E8F0;
+  --white: #FFFFFF;
+  --light-gray: #F8FAFC;
+  --dark-gray: #1E293B;
+  --text-muted: #64748B;
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--white);
+  color: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium elegant styles */
+.glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.section-title {
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+.card {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--emerald);
+}
+
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--emerald);
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+.language-switcher {
+  display: flex;
+  background: var(--light-gray);
+  border-radius: 9999px;
+  padding: 4px;
+  border: 1px solid var(--silver);
+}
+
+.language-switcher button {
+  padding: 6px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+}
+
+.language-switcher button.active {
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+.whatsapp-btn {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgb(16 185 129 / 0.3);
+}
+
+/* 3D Container */
+.three-container {
+  background: linear-gradient(145deg, #0F172A 0%, #1E293B 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+.tab-button {
+  padding: 12px 24px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tab-button.active {
+  border-bottom-color: var(--emerald);
+  color: var(--emerald);
+  font-weight: 600;
+}
+
+/* Process steps */
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--emerald);
+  font-family: var(--font-geist-mono);
+}
+
+/* Gallery */
+.gallery-img {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.03);
+}
+
+/* Modal */
+.modal {
+  animation: modalEnter 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Form styles */
+.input {
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--emerald);
+  box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+  outline: none;
